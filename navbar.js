@@ -9,4 +9,5 @@ function PindahKeHome(){
     $('#content').show()
     $('#isi').hide()
     $('#input').show()
+    $('#holiday').hide()
 }

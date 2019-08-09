@@ -3,6 +3,7 @@ if(localStorage.getItem(`token`)){
   console.log('an kfdnfelbvhfbgfr')
   $('#login-form').hide()
   $('#image').hide()
+  $('#holiday').hide()
 }
 $(document).ready(function() {
   
@@ -62,6 +63,7 @@ function AddToServer(token , nameUser){
         localStorage.setItem('username' , token.name)
         $('#content').show()
         $('#image').hide()
+        $('#holiday').hide()
       })
       .fail(function(jqXHR, textStatus) {
         console.log('Error:', textStatus);
@@ -75,6 +77,7 @@ function signOut() {
       $('#login-form').show()
       $('#content').hide()
       $('#image').hide()
+      $('#holiday').hide()
       localStorage.clear()
     });
 }
@@ -82,4 +85,11 @@ function signOut() {
 function RenderImage(){
   $('#image').show()
   $('#content').hide()
+  $('#holiday').hide()
+}
+
+function renderCalender(){
+  $('#image').hide()
+  $('#content').hide()
+  $('#holiday').show()
 }

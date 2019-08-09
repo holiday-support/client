@@ -7,7 +7,7 @@ if(localStorage.getItem(`token`)){
 }
 $(document).ready(function() {
   
-
+  $('.carousel').carousel()
   
 })
 function onSignIn(googleUser) {

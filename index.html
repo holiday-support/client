@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="./form.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>        
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">HocktiveDay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,14 +26,15 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" onclick="PindahKeHome()">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" onclick="RenderImage()" id="nav-img">Image</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" onclick="renderCalender()" id="nav-img">Holiday Calender</a>
                 </li>
+              
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -39,16 +42,72 @@
             </form>
         </div>
     </nav>
-    <a href="#" onclick="signOut();">Sign out</a>
-    <br>    
-    <div class="offset-md-4">
+    <input type="button" onclick="signOut();" value="log-out" class="btn btn-danger" >
+
+
+    <div id="image" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>image</h1>
+                <div class="row pl-4" id="list-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="holiday">
+            <h2>Next Public Holiday</h2>
+            <p>Let's planning on your travel... </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Local Name</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+              <tbody id="dataHoliday">
+                <tr>
+                  <td>Default</td>
+                  <td>Defaultson</td>
+                  <td>def@somemail.com</td>
+                </tr>      
+            
+              </tbody>
+            </table>
+          </div>
+    <div class="container-fluid" id="content">
+        <div class="row" id="isi">
+
+            <div class="col-sm-12">
+                <h1>Events</h1>
+                <div class="row pl-4" id="getEvents"></div>
+            </div>
+        
+        </div>
+        <div class="container" id="input">
+                <h2 id="h2-o"></h2>
+                <h1>Let's plan your destination country!</h1>
+                <p>Type the country name in the input field to search the list for specific items:</p>  
+                <input class="form-control" id="myInput" type="text" placeholder="Search.." >
+                <br>
+                <ul class="list-group" id="myList">
+
+                </ul>  
+        </div>    
+    </div>
+
+    </div>
+    <div class="offset-md-4" id="login-form">
         <div class="myform form">
             <div class="logo mb-3">
                 <div class="col-md-12 text-center">
                     <h1>Login</h1>
                 </div>
             </div>
-            <form action="" method="post" name="login">
+            <form action="" method="post" name="login" style="height: 440px;">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
@@ -82,13 +141,17 @@
             </form>
         </div>
     </div>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
+        </script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./main.js"></script>
+    <!-- <script src="./event.js"></script> -->
+    <script src="./image.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="./toEven.js"></script>
+    <script src="./navbar.js"></script>
+    <script src="./holiday.js"></script>
 </body>
 
 </html>

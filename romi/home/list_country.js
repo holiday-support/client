@@ -13,7 +13,7 @@ $(document).ready(function(){
     
         data.forEach(e => {
             $('#myList').prepend(
-                `<li class="list-group-item" ><a href ="#" onclick=${toEvent(e.key)}>${e.value}</a></li>`
+                `<li class="list-group-item" ><a href ="#">${e.value}</a></li>`
             )
         });
     })

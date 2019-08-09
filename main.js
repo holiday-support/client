@@ -1,4 +1,10 @@
 // const axios = require('axios')
+if(localStorage.getItem(`token`)){
+  console.log('an kfdnfelbvhfbgfr')
+  $('#login-form').hide()
+  $('#content').show()
+  $('#image').hide()
+}
 $(document).ready(function() {
   
 
@@ -12,6 +18,7 @@ function onSignIn(googleUser) {
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     console.log('Token: ' + googleUser.getAuthResponse().id_token);
     AddToServer(googleUser.getAuthResponse().id_token)
+    $('#login-form').hide()
 }
 
 function AddToServer(token){
@@ -25,9 +32,10 @@ function AddToServer(token){
       .done(function(token) {
         // $('#student-list').prepend('<li>' + newStudent.name + '</li>');
         console.log(token.token)
+        $('#login-form').hide()
         localStorage.setItem('token' , token.token)
-        // $('#login-form').hide()
-        // $('#dashboard').show()
+        $('#content').show()
+        $('#image').hide()
         localStorage.setItem('username' , token.username)
         // console.log('nerdfkmgdkgmf====================><><><><><><><><')
       })
@@ -40,6 +48,14 @@ function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
+      $('#login-form').show()
+      $('#content').hide()
+      $('#image').hide()
       localStorage.clear()
     });
+}
+
+function RenderImage(){
+  $('#image').show()
+  $('#content').hide()
 }
